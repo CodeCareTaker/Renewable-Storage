@@ -11,7 +11,9 @@ var express               = require("express"),
     passportLocalMongoose = require("passport-local-mongoose")
     //seedDB                = require("./seeds")
 
-mongoose.connect("mongodb://localhost/renewable_v2");
+var url = process.env.DATABASEURL || "mongodb://localhost/renewable_v2";
+mongoose.connect(url);
+
 
 var app = express();
 mongoose.Promise = global.Promise;
