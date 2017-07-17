@@ -8,7 +8,7 @@ var express               = require("express"),
     Comment               = require("./models/comment"),
     User                  = require("./models/user"),
     LocalStrategy         = require("passport-local"),
-    passportLocalMongoose = require("passport-local-mongoose")
+    passportLocalMongoose = require("passport-local-mongoose");
     //seedDB                = require("./seeds")
 
 var url = process.env.DATABASEURL || "mongodb://localhost/renewable_v2";
@@ -132,12 +132,12 @@ app.get("/storagesolutions", function(req, res){
 //show register form
 app.get("/register", function(req, res){
     res.render("blog/register");
-})
+});
 
 //handling user sign up
 app.post("/register", function(req, res) {
-    req.body.username
-    req.body.password
+    req.body.username;
+    req.body.password;
     var newUser = new User({username: req.body.username});
     User.register(newUser, req.body.password, function(err, user){
         if(err){
@@ -147,9 +147,9 @@ app.post("/register", function(req, res) {
         passport.authenticate("local")(req, res, function(){
             req.flash("success", user.username + " has been registered");
             res.redirect("/blog");
-        })
-    })
-})
+        });
+    });
+});
 
 //Login Routes
 //render login form
@@ -184,7 +184,7 @@ app.post("/blog", isAdmin, function(req, res){
         id: req.user._id,
         username: req.user.username
     };
-    var newBlog = {title: title, image: image, content: content, author: author}
+    var newBlog = {title: title, image: image, content: content, author: author};
     // Create a new blog and save to DB
     Blog.create(newBlog, function(err, newlyCreated){
         if(err){
@@ -291,10 +291,10 @@ app.post("/blog/:id/comments/", isLoggedIn, function(req, res){
                  req.flash("success", "Your comment has been posted");
                  res.redirect("/blog/" + req.params.id);
              }
-         })
+         });
             console.log(req.body.comment);
         }
-    })
+    });
 });
 
 
@@ -320,8 +320,8 @@ app.put("/blog/:id/comments/:comment_id", checkCommentOwnership,  function(req, 
             req.flash("success", "Comment update sucessful");
             res.redirect("back");
         }
-    })
-})
+    });
+});
 
 //Comment Destroy Route
 app.delete("/blog/:id/comments/:comment_id", checkCommentOwnership, function(req, res){
@@ -392,7 +392,3 @@ function checkCommentOwnership (req, res, next){
 app.listen(process.env.PORT, process.env.IP, function(){
    console.log("The Server Has Started");
 });
-
-
-
-
