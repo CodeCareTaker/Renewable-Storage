@@ -1,0 +1,56 @@
+<% include ../partials/blogHeader %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img class="img-responsive" src ="<%= blog.image %>">
+                <div class="caption-full">
+                    <h4 class="pull-right"><em>Posted By <%= blog.author.username %></em></h4>
+                    <h4><a><%=blog.title%></a></h4>
+                    <p><%= blog.content %></p>
+                    <% if (currentUser && currentUser.isAdmin == true) { %>
+                        <a class="btn btn-warning" href="/blog/<%= blog._id %>/edit">Edit blog Information</a>
+                        <form class="delete-form" action="/blog/<%= blog._id %>?_method=DELETE" method="POST">
+                            <input type="submit" class="btn btn-danger" value="Remove">
+                        </form>
+                    <% } %>
+                </div>
+            </div>
+            <div class="well">
+                <% if ((currentUser && currentUser.isAdmin == true) || (currentUser && currentUser.isAdmin == false)) { %>
+                    <div class"text-right">
+                        <a class="btn btn-success" href="/blog/<%= blog._id %>/comments/new">Add New Comment</a>
+                    </div>
+                <% } %>
+                <% if (!currentUser) { %>
+                            <div class"text-right">
+                                <a class="btn btn-success" href="/login">Login required to leave comment</a>
+                            </div>
+                <% } %>
+                <hr>
+            <% blog.comments.forEach(function(comment){ %>
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong><%= comment.author.username %></strong>
+                        <span class="pull-right"><%= comment.created.toDateString() %></span>
+                            <p>
+                                <%= comment.text %>
+                            </p>
+                        
+                        <% if ((currentUser && currentUser.isAdmin == true) || (currentUser && comment.author.id.equals(currentUser._id))) { %>
+                            <a class="btn btn-xs btn-warning" href="/blog/<%=blog._id%>/comments/<%=comment._id%>/edit">Edit</a>
+                            <form class="delete-form" action="/blog/<%=blog._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                            </form>
+                        <% } %>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include ../partials/altFooter %>

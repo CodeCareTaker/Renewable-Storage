@@ -1,0 +1,97 @@
+body {
+	background-color: white;
+	background-size: cover;
+	background-position: center;
+	padding-top: 70px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-family: 'Raleway', sans-serif;
+}
+table, th, td {
+   border: 1px solid black;
+}
+#siteBody{
+	display: inline-block;
+}
+#topImage {
+	width: 30%; 
+	height: 30%;
+}
+.navbar-brand {
+	background-size: contain;
+    height: 300%;
+    position: relative;
+}
+.navbar-inverse{
+	background: #40c90e;
+	color: #ffffff;
+}
+.navbar-inverse .navbar-nav >li>a, .navbar-inverse .navbar-nav {
+    background: #40c90e;
+    color: #ffffff;
+    font-size: 170%;
+    margin-top: 20px;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a, .navbar-inverse .navbar-nav .open .dropdown-menu {
+    background: #40c90e;
+    color: #ffffff;
+}
+.jumbotron{
+	background: #40c90e;
+	color: white;
+	display: inline-block;
+	justify-content: center;
+	text-align: center;
+	vertical-align: top; 
+}
+
+.mainSection{
+	/*Creates spacing around the div to position it in the center
+	of the page*/
+	align-items: center;
+	background-color: white;
+	border: 25px solid #40c90e;
+	border-radius: 25px;
+	display: inline-block;
+	font-size: 120%;
+	justify-content: center;
+	padding: 20px;
+	margin: 10%;
+	text-align: center;
+}
+.container .row .col-md-9 .thumbnail {
+	margin-left: 25%;
+}
+.sideSection{
+	float: left;
+	text-align: left;
+	
+}
+.titleline {
+	color: #5b9e01;
+}
+.well{
+	margin-left: 25%;
+}
+.footernote{
+	background-color: #40c90e;
+	border-radius: 25px;
+	color: white;
+	display: inline-block;
+	font-size: 150%;
+	font-family: 'Raleway', sans-serif;
+	margin-left: 35%;
+	margin-bottom: 10%;
+	padding: 20px;
+	text-align: center;
+}
+
+.pricetable {
+	/*cellspacing: 1;*/
+	 height: 189;
+	 width: 363;
+	 margin-left: 35%;
+}
+.pNumber {
+	color: #4286f4;
+}

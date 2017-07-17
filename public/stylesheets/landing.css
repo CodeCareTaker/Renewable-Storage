@@ -1,0 +1,75 @@
+body {
+	background-color: white;
+	background-size: cover;
+	background-position: center;
+	padding-top: 70px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-family: 'Raleway', sans-serif;
+}
+#leftImage{
+	float: left;
+}
+#siteBody{
+	display: inline-block;
+}
+.navbar-brand {
+    position: relative;
+    height: 300%;
+    background-size: contain;
+}
+.navbar-inverse{
+	background: #40c90e;
+}
+.navbar-inverse .navbar-nav >li>a, .navbar-inverse .navbar-nav {
+    background: #40c90e;
+    color: #ffffff;
+    font-size: 170%;
+    margin-top: 20px;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a, .navbar-inverse .navbar-nav .open .dropdown-menu {
+    background: #40c90e;
+    color:#ffffff;
+}
+.fadein { 
+	position: relative;
+	width: 50%;
+	height: 332px;
+	margin: 2%;
+	
+}
+.fadein img { 
+	position: absolute; 
+	left: 32%; 
+	top: 0;
+}
+.mainSection{
+	/*Creates spacing around the div to position it in the center
+	of the page*/
+	align-items: center;
+	display: inline-block;
+	justify-content: center;
+	border: 25px solid #40c90e;
+	border-radius: 25px;
+	background-color: white;
+	padding: 20px;
+	margin: 10% 25%;
+	font-size: 120%;
+	width: 50%;
+	height: 50%;
+}
+.titleline {
+	color:#5b9e01;
+}
+.footernote{
+	background-color: #40c90e;
+	border-radius: 25px;
+	color: white;
+	display: inline-block;
+	font-size: 150%;
+	font-family: 'Raleway', sans-serif;
+	margin-left: 35%;
+	margin-bottom: 10%;
+	padding: 20px;
+	text-align: center;
+}
