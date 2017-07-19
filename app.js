@@ -237,7 +237,6 @@ app.put("/blog/:id", isAdmin, function(req, res){
     });
 });
 
-//Unfinished
 //Delete a blog entry
 app.delete("/blog/:id", isAdmin, function(req, res) {
     //remove blog entry from the website
@@ -296,9 +295,6 @@ app.post("/blog/:id/comments/", isLoggedIn, function(req, res){
         }
     });
 });
-
-
-
 
 //Comment Edit
 app.get("/blog/:id/comments/:comment_id/edit", checkCommentOwnership, function(req, res){
