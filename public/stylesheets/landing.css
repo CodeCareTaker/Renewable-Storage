@@ -13,6 +13,10 @@ body {
 #siteBody{
 	display: inline-block;
 }
+.brandImage {
+	width: 75%;
+	height: 320%;
+}
 .navbar-brand {
     position: relative;
     height: 300%;

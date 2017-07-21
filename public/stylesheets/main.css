@@ -17,6 +17,10 @@ table, th, td {
 	width: 30%; 
 	height: 30%;
 }
+.brandImage {
+	width: 75%;
+	height: 320%;
+}
 .navbar-brand {
 	background-size: contain;
     height: 300%;
