@@ -72,8 +72,7 @@ body {
 	display: inline-block;
 	font-size: 150%;
 	font-family: 'Raleway', sans-serif;
-	margin-left: 35%;
-	margin-bottom: 10%;
+	margin: 0% 35% 10% 35%;
 	padding: 20px;
 	text-align: center;
 }
